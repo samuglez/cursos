@@ -118,4 +118,21 @@ app.get('/api/usuarios/:id', (req, res) => {
     }
 });
 
+app.get('/api/docentes', (req, res) => {
+    res.send(docentes);
+});
+
+app.get('/api/docentes/:id', (req, res) => {
+    let idDocente = parseInt(req.params.id);
+    const unDocente = usuadocentesrios.find((docente) => {
+        return docente.id === idDocente;
+    })
+    if (!unDocente) {
+        res.status(404);
+        res.send('Docente no encontrado');
+    } else {
+        res.send(unDocente);
+    }
+});
+
 app.listen(port, () => console.log(`Servidor escuchando en puerto ${port}`));
