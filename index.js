@@ -48,7 +48,7 @@ const usuarios = [{
         puntuacion: 1000,
     }
 ];
-const grupoDocentes = [{
+const docentes = [{
         id: 1,
         nombre: 'Valka',
         apellidos: 'Dondarr',
@@ -119,12 +119,12 @@ app.get('/api/usuarios/:id', (req, res) => {
 });
 
 app.get('/api/docentes', (req, res) => {
-    res.send(grupoDocentes);
+    res.send(docentes);
 });
 
 app.get('/api/docentes/:id', (req, res) => {
     let idDocente = parseInt(req.params.id);
-    const unDocente = grupoDocentes.find((docente) => {
+    const unDocente = docentes.find((docente) => {
         return docente.id === idDocente;
     })
     if (!unDocente) {
