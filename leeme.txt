@@ -1,0 +1,7 @@
+1 - Decirle a nuestro git donde está el repositorio remoto
+git remote add origin https://github.com/gabrielecirulli/2048.git
+
+2 - Convertir (renombrar) nuestra rama de master a main
+git branch -m main
+git push -u origin main
+3 - Subir nuestro repo a github
